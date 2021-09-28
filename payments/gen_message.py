@@ -7,7 +7,7 @@ except Exception:
     MID = ''
     SEC_ID = ''
     REVERSE_URL = ''
-from .checksum import Checksum
+from payments.checksum import Checksum
 from datetime import datetime
 
 

@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'django-billdesk-pg',         # How you named your package folder (MyLib)
   packages = ['payments'],   # Chose the same as "name"
-  version = 'v0.2',      # Start with a small number and increase it with every change you make
+  version = '0.3',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Django BillDesk Payment Gateway',   # Give a short description about your library
   author = 'Ravi Chandra',                   # Type in your name

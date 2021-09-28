@@ -2,7 +2,8 @@ from django.shortcuts import render
 from payments.forms import checkoutForm
 from payments.models import Transaction,Amount
 from django.contrib.auth.models import User
-from payments.django_billdesk import ResponseMessage, GetMessage
+from payments.responseMsg import ResponseMessage
+from payments.gen_message import GetMessage
 import uuid
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt

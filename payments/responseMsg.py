@@ -1,4 +1,4 @@
-from .checksum import Checksum
+from payments.checksum import Checksum
 
 class ResponseMessage:
     def findNthOccur(self, string, ch, N):
