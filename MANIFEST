@@ -5,8 +5,11 @@ setup.py
 payments/__init__.py
 payments/admin.py
 payments/apps.py
+payments/checksum.py
 payments/forms.py
+payments/gen_message.py
 payments/models.py
+payments/responseMsg.py
 payments/tests.py
 payments/urls.py
 payments/views.py

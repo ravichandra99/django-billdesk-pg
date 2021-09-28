@@ -19,7 +19,7 @@ def get_order_id(id):
     return str(id)+str(uuid.uuid4())[:8]
 
 #function to generate message and send to billdesk
-@login_required
+
 def payment_request(request):
     if request.method == 'POST':
         form = checkoutForm(request.POST)
@@ -40,7 +40,7 @@ def payment_request(request):
                     trans = Transaction.objects.filter(order_id=oid)
                     if not trans:
                         break
-                if Amount.objects.all().first().exists():
+                if Amount.objects.filter(pk = 1).exists():
                     amount = Amount.objects.all().first().amount
                 else:
                     amount = 10.00
@@ -48,6 +48,7 @@ def payment_request(request):
                 Transaction.objects.create(owner=usr_details, order_id=oid, email=usr_details.email, amount_initiated=amount, status='PENDING', registered_for='transfer', log=str([msg]), txn_date=timezone.localtime(timezone.now()))
                 return render(request, 'paymentProcess.html', {'msg': msg, 'url': settings.BILL_URL})
             else:
+                usr_details = User.objects.filter(id = request.user.id)
                 id = 12345
                 mnumber = '9885098850'
                 fname = 'sampleuser'
@@ -59,12 +60,12 @@ def payment_request(request):
                     trans = Transaction.objects.filter(order_id=oid)
                     if not trans:
                         break
-                if Amount.objects.all().first().exists():
+                if Amount.objects.filter(pk = 1).exists():
                     amount = Amount.objects.all().first().amount
                 else:
                     amount = 10.00
                 msg = GetMessage().message(oid, amount, id, email_id, fname, mnumber)
-                Transaction.objects.create(owner=usr_details, order_id=oid, email=usr_details.email, amount_initiated=amount, status='PENDING', registered_for='transfer', log=str([msg]), txn_date=timezone.localtime(timezone.now()))
+                Transaction.objects.create(owner=None, order_id=oid, email=email_id, amount_initiated=amount, status='PENDING', registered_for='transfer', log=str([msg]), txn_date=timezone.localtime(timezone.now()))
                 return render(request, 'paymentProcess.html', {'msg': msg, 'url': settings.BILL_URL})
 
     form = checkoutForm()
