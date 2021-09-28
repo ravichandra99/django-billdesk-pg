@@ -2,10 +2,6 @@
 README.txt
 setup.cfg
 setup.py
-django_billdesk/__init__.py
-django_billdesk/checksum.py
-django_billdesk/gen_message.py
-django_billdesk/responseMsg.py
 payments/__init__.py
 payments/admin.py
 payments/apps.py
