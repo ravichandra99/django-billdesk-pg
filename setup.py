@@ -4,13 +4,13 @@ setup(
   package_dir={'payments': 'payments'},
   packages = ['payments'],   # Chose the same as "name"
   include_package_data=True,
-  version = '0.4',      # Start with a small number and increase it with every change you make
+  version = '0.61',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Django BillDesk Payment Gateway',   # Give a short description about your library
   author = 'Ravi Chandra',                   # Type in your name
   author_email = 'ravichandra@gmail.com',      # Type in your E-Mail
   url = 'https://github.com/ravichandra99',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/ravichandra99/django-billdesk-pg/archive/refs/tags/v0.4.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/ravichandra99/django-billdesk-pg/archive/refs/tags/v0.61.tar.gz',    # I explain this later on
   keywords = ['PAYMENT', 'GATEWAY', 'BILLDESK'],   # Keywords that define your package best
   install_requires=[
     'django-import-export',            # I get to this in a second
